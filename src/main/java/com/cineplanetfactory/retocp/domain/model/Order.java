@@ -59,7 +59,7 @@ public class Order {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public class Customer {
+    public static class Customer {
         /**
          * Nombres del cliente del Pedido.
          */

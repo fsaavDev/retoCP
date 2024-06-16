@@ -2,10 +2,12 @@ package com.cineplanetfactory.retocp.adapters.web.controller;
 
 import com.cineplanetfactory.retocp.application.port.input.IOrderService;
 import com.cineplanetfactory.retocp.domain.dto.OrderDTO;
-import com.cineplanetfactory.retocp.domain.dto.OrderDTO;
-import com.cineplanetfactory.retocp.domain.dto.OrderDTO;
 import com.cineplanetfactory.retocp.domain.request.OrderSaveReq;
-import com.cineplanetfactory.retocp.domain.response.ApiResponse;
+import com.cineplanetfactory.retocp.domain.response.RetoCpApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,41 +21,66 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pedidos")
+@Tag(name = "Pedidos", description = "Gestion de pedidos")
 public class OrderController {
     @Autowired
     private IOrderService orderService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<OrderDTO>> findOrderById(@PathVariable("id") Long id){
-        ApiResponse<OrderDTO> apiResponse = new ApiResponse<>(orderService.findOrderById(id));
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    @Operation(summary = "Obtener pedido por Id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "pedido encontrado")
+    })
+    public ResponseEntity<RetoCpApiResponse<OrderDTO>> findOrderById(@PathVariable("id") Long id){
+        RetoCpApiResponse<OrderDTO> retoCpApiResponse = new RetoCpApiResponse<>(orderService.findOrderById(id));
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<OrderDTO>> saveOrder(@Valid @RequestBody OrderSaveReq req){
-        ApiResponse<OrderDTO> apiResponse = new ApiResponse<>(orderService.saveOrder(req));
-        return new ResponseEntity<>(apiResponse, HttpStatus.CREATED);
+    @Operation(summary = "Crear un nuevo pedido")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "pedido creado")
+    })
+    public ResponseEntity<RetoCpApiResponse<OrderDTO>> saveOrder(@Valid @RequestBody OrderSaveReq req){
+        RetoCpApiResponse<OrderDTO> retoCpApiResponse = new RetoCpApiResponse<>(orderService.saveOrder(req));
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApiResponse<OrderDTO>> updateOrder(@Valid @RequestBody OrderSaveReq req, @PathVariable("id") Long id){
-        ApiResponse<OrderDTO> apiResponse = new ApiResponse<>(orderService.updateOrder(req,id));
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    @Operation(summary = "Actualizar un pedido por id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "pedido creado")
+    })
+    public ResponseEntity<RetoCpApiResponse<OrderDTO>> updateOrder(@Valid @RequestBody OrderSaveReq req, @PathVariable("id") Long id){
+        RetoCpApiResponse<OrderDTO> retoCpApiResponse = new RetoCpApiResponse<>(orderService.updateOrder(req,id));
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<String>> deleteOrder(@PathVariable("id") Long id){
+    @Operation(summary = "Eliminar un pedido por id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "pedido eliminado"),
+    })
+    public ResponseEntity<RetoCpApiResponse<String>> deleteOrder(@PathVariable("id") Long id){
         orderService.deleteOrder(id);
-        ApiResponse<String> apiResponse = new ApiResponse<>("Pedido eliminado");
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+        RetoCpApiResponse<String> retoCpApiResponse = new RetoCpApiResponse<>("Pedido eliminado");
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
 
-    @GetMapping()
-    public ResponseEntity<ApiResponse<List<OrderDTO>>> ListAllOrders(){
-        ApiResponse<List<OrderDTO>> apiResponse = new ApiResponse<>(orderService.listAllOrders());
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    @GetMapping
+    @Operation(summary = "Listar todos los pedidos")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "listado de pedidos encontrados"),
+    })
+    public ResponseEntity<RetoCpApiResponse<List<OrderDTO>>> ListAllOrders(){
+        RetoCpApiResponse<List<OrderDTO>> retoCpApiResponse = new RetoCpApiResponse<>(orderService.listAllOrders());
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
     @GetMapping("/pagination")
+    @Operation(summary = "Listar todos los pedidos en formato de paginacion")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "paginado de pedidos encontrados"),
+    })
     public ResponseEntity<Page<OrderDTO>> findOrderPage(
             @RequestParam(name = "page", defaultValue = "0") int page,
             @RequestParam(name = "size", defaultValue = "5") int size
@@ -64,20 +91,32 @@ public class OrderController {
     }
 
     @GetMapping("/order/quantity")
-    public ResponseEntity<ApiResponse<List<OrderDTO>>> sortAllOrdersByQuantity(){
-        ApiResponse<List<OrderDTO>> apiResponse = new ApiResponse<>(orderService.sortAllOrdersByQuantity());
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    @Operation(summary = "Listar todos los pedidos ordenados por cantidad de productos")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "listado de pedidos encontrados"),
+    })
+    public ResponseEntity<RetoCpApiResponse<List<OrderDTO>>> sortAllOrdersByQuantity(){
+        RetoCpApiResponse<List<OrderDTO>> retoCpApiResponse = new RetoCpApiResponse<>(orderService.sortAllOrdersByQuantity());
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
 
     @GetMapping("/product-name/{name}")
-    public ResponseEntity<ApiResponse<List<OrderDTO>>> getOrderByOrderName(@PathVariable("name") String name){
-        ApiResponse<List<OrderDTO>> apiResponse = new ApiResponse<>(orderService.getOrderByProductName(name));
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    @Operation(summary = "Listar todos los pedidos con el producto con nombre que contenga el valor de la variable name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "listado de pedidos encontrados"),
+    })
+    public ResponseEntity<RetoCpApiResponse<List<OrderDTO>>> getOrderByOrderName(@PathVariable("name") String name){
+        RetoCpApiResponse<List<OrderDTO>> retoCpApiResponse = new RetoCpApiResponse<>(orderService.getOrderByProductName(name));
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
 
     @GetMapping("/customer-lastname/{lastname}")
-    public ResponseEntity<ApiResponse<List<OrderDTO>>> getOrderByCustomerLastname(@PathVariable("lastname") String lastname){
-        ApiResponse<List<OrderDTO>> apiResponse = new ApiResponse<>(orderService.getOrderByCustomerLastname(lastname));
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
+    @Operation(summary = "Listar todos los pedidos con el apellido del cliente ue contenga el valor de la variable name")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "listado de pedidos encontrados"),
+    })
+    public ResponseEntity<RetoCpApiResponse<List<OrderDTO>>> getOrderByCustomerLastname(@PathVariable("lastname") String lastname){
+        RetoCpApiResponse<List<OrderDTO>> retoCpApiResponse = new RetoCpApiResponse<>(orderService.getOrderByCustomerLastname(lastname));
+        return new ResponseEntity<>(retoCpApiResponse, HttpStatus.OK);
     }
 }

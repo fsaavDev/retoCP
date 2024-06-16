@@ -1,0 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > IOrderRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.adapters.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: IOrderRepository (com.cineplanetfactory.retocp.adapters.repository)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">IOrderRepository$MockitoMock$5qxo6vW6</td>
+  </tr>
+  <tr>
+    <td class="name">IOrderRepository$MockitoMock$5qxo6vW6$auxiliary$K5QETaip</td>
+  </tr>
+  <tr>
+    <td class="name">IOrderRepository$MockitoMock$5qxo6vW6$auxiliary$KxlgxJvO</td>
+  </tr>
+  <tr>
+    <td class="name">IOrderRepository$MockitoMock$5qxo6vW6$auxiliary$lAULOd0b</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.adapters.repository;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.domain.model.Order;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.data.jpa.repository.Query;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface IOrderRepository extends JpaRepository&lt;Order, Long&gt; {
+&nbsp;    @Query(&quot;FROM Order o WHERE o.product.name = :name&quot;)
+&nbsp;    List&lt;Order&gt; getByProductName(String name);
+&nbsp;
+&nbsp;    @Query(&quot;FROM Order o WHERE o.customer.lastnames LIKE %:lastname%&quot;)
+&nbsp;    List&lt;Order&gt; getByCustomerLastname(String lastname);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:09</div>
+</div>
+</body>
+</html>

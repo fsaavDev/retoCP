@@ -1,0 +1,97 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > IOrderService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.application.port.input</a>
+</div>
+
+<h1>Coverage Summary for Class: IOrderService (com.cineplanetfactory.retocp.application.port.input)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">IOrderService$MockitoMock$7qKdpLuy</td>
+  </tr>
+  <tr>
+    <td class="name">IOrderService$MockitoMock$7qKdpLuy$auxiliary$Dz8qcDqc</td>
+  </tr>
+  <tr>
+    <td class="name">IOrderService$MockitoMock$7qKdpLuy$auxiliary$WLMVVx1V</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.application.port.input;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.domain.dto.OrderDTO;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.OrderSaveReq;
+&nbsp;import org.springframework.data.domain.Page;
+&nbsp;import org.springframework.data.domain.Pageable;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface IOrderService {
+&nbsp;    OrderDTO findOrderById(Long id);
+&nbsp;    OrderDTO saveOrder(OrderSaveReq req);
+&nbsp;    OrderDTO updateOrder(OrderSaveReq req, Long id);
+&nbsp;    void deleteOrder(Long id);
+&nbsp;    List&lt;OrderDTO&gt; listAllOrders();
+&nbsp;    List&lt;OrderDTO&gt; sortAllOrdersByQuantity();
+&nbsp;    Page&lt;OrderDTO&gt; findOrderPage(Pageable pageable);
+&nbsp;    List&lt;OrderDTO&gt; getOrderByProductName(String name);
+&nbsp;    List&lt;OrderDTO&gt; getOrderByCustomerLastname(String lastname);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:23</div>
+</div>
+</body>
+</html>

@@ -13,6 +13,7 @@ import javax.validation.constraints.Min;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "PEDIDOS")
 public class Order {
@@ -59,6 +60,7 @@ public class Order {
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
+    @ToString
     public static class Customer {
         /**
          * Nombres del cliente del Pedido.

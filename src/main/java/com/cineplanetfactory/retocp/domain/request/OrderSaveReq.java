@@ -4,11 +4,13 @@ import com.cineplanetfactory.retocp.domain.dto.ProductDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.validation.constraints.*;
 
 @Getter
 @Setter
+@ToString
 public class OrderSaveReq {
     @JsonProperty("codigo_producto")
     @NotNull(message = "El código del producto no puede ser nulo")

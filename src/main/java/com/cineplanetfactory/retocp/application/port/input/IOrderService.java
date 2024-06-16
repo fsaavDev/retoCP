@@ -10,7 +10,7 @@ import java.util.List;
 public interface IOrderService {
     OrderDTO findOrderById(Long id);
     OrderDTO saveOrder(OrderSaveReq req);
-    OrderDTO updateOrder(OrderSaveReq req);
+    OrderDTO updateOrder(OrderSaveReq req, Long id);
     void deleteOrder(Long id);
     List<OrderDTO> ListAllOrders();
     Page<OrderDTO> findOrderPage(Pageable pageable);

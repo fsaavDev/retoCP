@@ -11,9 +11,10 @@ import java.util.List;
 public interface IProductService {
     ProductDTO findProductById(Long id);
     ProductDTO saveProduct(ProductSaveReq req);
-    ProductDTO updateProduct(ProductSaveReq req);
+    ProductDTO updateProduct(ProductSaveReq req, Long id);
     void deleteProduct(Long id);
     List<ProductDTO> ListAllProducts();
+    List<ProductDTO> OrderAllProductsByPrice();
     Page<ProductDTO> findProductPage(Pageable pageable);
     List<ProductDTO> findProductByName(String name);
     List<ProductDTO> findProductByPrice(BigDecimal min, BigDecimal max);

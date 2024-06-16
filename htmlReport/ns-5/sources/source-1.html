@@ -1,0 +1,275 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > OrderServiceImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.application.service</a>
+</div>
+
+<h1>Coverage Summary for Class: OrderServiceImpl (com.cineplanetfactory.retocp.application.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OrderServiceImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (55/55)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.application.service;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.adapters.repository.IOrderRepository;
+&nbsp;import com.cineplanetfactory.retocp.adapters.repository.IProductRepository;
+&nbsp;import com.cineplanetfactory.retocp.adapters.util.IMapper;
+&nbsp;import com.cineplanetfactory.retocp.adapters.web.exception.ModelNotFoundException;
+&nbsp;import com.cineplanetfactory.retocp.application.port.input.IOrderService;
+&nbsp;import com.cineplanetfactory.retocp.domain.dto.OrderDTO;
+&nbsp;import com.cineplanetfactory.retocp.domain.model.Order;
+&nbsp;import com.cineplanetfactory.retocp.domain.model.Product;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.OrderSaveReq;
+&nbsp;import lombok.extern.slf4j.Slf4j;
+&nbsp;import org.springframework.data.domain.Page;
+&nbsp;import org.springframework.data.domain.Pageable;
+&nbsp;import org.springframework.data.domain.Sort;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.stream.Collectors;
+&nbsp;
+&nbsp;@Service
+<b class="fc">&nbsp;@Slf4j</b>
+&nbsp;public class OrderServiceImpl implements IOrderService {
+&nbsp;
+&nbsp;    private final IProductRepository productRepository;
+&nbsp;    private final IOrderRepository orderRepository;
+&nbsp;
+&nbsp;    private final IMapper mapper;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Dependency Injection por constructor
+&nbsp;     *
+&nbsp;     * @param productRepository repositorio de Productos
+&nbsp;     * @param orderRepository   repositorio de Pedidos
+&nbsp;     * @param mapper componente mapper para transformacion de Entidad a DTO, Request a Entity
+&nbsp;     */
+<b class="fc">&nbsp;    public OrderServiceImpl(IProductRepository productRepository, IOrderRepository orderRepository, IMapper mapper) {</b>
+<b class="fc">&nbsp;        this.productRepository = productRepository;</b>
+<b class="fc">&nbsp;        this.orderRepository = orderRepository;</b>
+<b class="fc">&nbsp;        this.mapper = mapper;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param id identificador del pedido
+&nbsp;     * @return DTO de Pedido
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public OrderDTO findOrderById(Long id) {
+<b class="fc">&nbsp;        log.info(&quot;Buscando pedido con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;        Order entity = orderRepository.findById(id)</b>
+<b class="fc">&nbsp;                .orElseThrow(()-&gt; {</b>
+<b class="fc">&nbsp;                    log.warn(&quot;Pedido no encontrado con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;                    return new ModelNotFoundException(&quot;Pedido no encontrado&quot;);</b>
+&nbsp;                });
+&nbsp;
+<b class="fc">&nbsp;        return mapper.toDTO(entity);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param req request para crear pedido
+&nbsp;     * @return DTO de Pedido
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public OrderDTO saveOrder(OrderSaveReq req) {
+<b class="fc">&nbsp;        log.info(&quot;Guardando producto con informacion del request: {}&quot;, req);</b>
+&nbsp;
+<b class="fc">&nbsp;        log.info(&quot;Buscando producto con el ID: {}&quot;, req.getProductCode());</b>
+<b class="fc">&nbsp;        Product productEntity = productRepository.findById(req.getProductCode())</b>
+<b class="fc">&nbsp;                .orElseThrow(()-&gt; {</b>
+<b class="fc">&nbsp;                    log.warn(&quot;Producto no encontrado con el ID: {}&quot;, req.getProductCode());</b>
+<b class="fc">&nbsp;                    return new ModelNotFoundException(&quot;Producto no encontrado&quot;);</b>
+&nbsp;                });
+&nbsp;
+<b class="fc">&nbsp;        Order entity = new Order();</b>
+<b class="fc">&nbsp;        entity.setProduct(productEntity);</b>
+<b class="fc">&nbsp;        entity.setCustomer(new Order.Customer(req.getNames(),req.getLastnames(),req.getAddress()));</b>
+<b class="fc">&nbsp;        entity.setQuantity(req.getQuantity());</b>
+&nbsp;
+<b class="fc">&nbsp;        OrderDTO dto = mapper.toDTO(orderRepository.save(entity));</b>
+<b class="fc">&nbsp;        log.info(&quot;Pedido guardado exitosamente: {}&quot;, entity);</b>
+&nbsp;
+<b class="fc">&nbsp;        return dto;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param req request para actualizar pedido
+&nbsp;     * @param id identificador del pedido
+&nbsp;     * @return DTO de Pedido
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public OrderDTO updateOrder(OrderSaveReq req, Long id) {
+<b class="fc">&nbsp;        log.info(&quot;Buscando pedido con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;        Order entity = orderRepository.findById(id)</b>
+<b class="fc">&nbsp;                .orElseThrow(()-&gt; {</b>
+<b class="fc">&nbsp;                    log.warn(&quot;Pedido no encontrado con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;                    return new ModelNotFoundException(&quot;Pedido no encontrado&quot;);</b>
+&nbsp;                });
+<b class="fc">&nbsp;        entity.setQuantity(req.getQuantity());</b>
+<b class="fc">&nbsp;        entity.setCustomer(new Order.Customer(req.getNames(),req.getLastnames(),req.getAddress()));</b>
+<b class="fc">&nbsp;        entity = orderRepository.save(entity);</b>
+<b class="fc">&nbsp;        log.info(&quot;Pedido guardado exitosamente: {}&quot;, entity);</b>
+<b class="fc">&nbsp;        return mapper.toDTO(entity);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param id identificador del pedido a eliminar
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public void deleteOrder(Long id) {
+<b class="fc">&nbsp;        if(!orderRepository.existsById(id)){</b>
+<b class="fc">&nbsp;            log.warn(&quot;Pedido no encontrado con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;            throw new ModelNotFoundException(&quot;Pedido no encontrado&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        orderRepository.deleteById(id);</b>
+<b class="fc">&nbsp;        log.info(&quot;Pedido eliminado exitosamente&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @return Listado de todos los Pedidos sin paginacion
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;OrderDTO&gt; listAllOrders() {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los pedidos&quot;);</b>
+<b class="fc">&nbsp;        return orderRepository.findAll().stream()</b>
+<b class="fc">&nbsp;                .map(mapper::toDTO) // method reference es menos legible pero mas acorde a programacion funcional</b>
+<b class="fc">&nbsp;                .collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @return Listado de todos los Pedidos ordenados por cantidad de productos en el pedido
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;OrderDTO&gt; sortAllOrdersByQuantity() {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los pedidos ordenados por cantidad de producots&quot;);</b>
+<b class="fc">&nbsp;        return orderRepository.findAll(Sort.by(&quot;quantity&quot;))</b>
+<b class="fc">&nbsp;                .stream().map(mapper::toDTO).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param pageable numero y tamaño de pagina a mostrar
+&nbsp;     * @return Pagina de pedidos
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public Page&lt;OrderDTO&gt; findOrderPage(Pageable pageable) {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los pedidos en formato de paginacion&quot;);</b>
+<b class="fc">&nbsp;        Page&lt;Order&gt; orders = orderRepository.findAll(pageable);</b>
+<b class="fc">&nbsp;        return orders.map(mapper::toDTO);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param name nombre del producto en el pedido
+&nbsp;     * @return Listado de todos los Pedidos que tienen como producto el indicado
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;OrderDTO&gt; getOrderByProductName(String name) {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los pedidos por nombre de producto: {}&quot;,name);</b>
+<b class="fc">&nbsp;        return orderRepository.getByProductName(name).stream()</b>
+<b class="fc">&nbsp;                .map(mapper::toDTO).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param lastname apellido del cliente del pedido
+&nbsp;     * @return Listado de todos los Pedidos que tienen clientes que en su apellido contengan lo indicado
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;OrderDTO&gt; getOrderByCustomerLastname(String lastname) {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los productos por apellido de cliente: {}&quot;,lastname);</b>
+<b class="fc">&nbsp;        return orderRepository.getByCustomerLastname(lastname).stream()</b>
+<b class="fc">&nbsp;                .map(mapper::toDTO).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:23</div>
+</div>
+</body>
+</html>

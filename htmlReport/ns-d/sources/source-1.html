@@ -1,0 +1,143 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > IProductService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.application.port.input</a>
+</div>
+
+<h1>Coverage Summary for Class: IProductService (com.cineplanetfactory.retocp.application.port.input)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$9kRR57GC</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$9kRR57GC$auxiliary$fdFJjxeo</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$9kRR57GC$auxiliary$UIQVv2eR</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$Ksnc9ec5</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$Ksnc9ec5$auxiliary$agMemltK</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$Ksnc9ec5$auxiliary$xfdu8bA0</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$qEYF3qt8</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$qEYF3qt8$auxiliary$ds8cQf3x</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$qEYF3qt8$auxiliary$oNglxkdV</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$rcW9g94Q</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$rcW9g94Q$auxiliary$T1tIbRtU</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$rcW9g94Q$auxiliary$vGMmHJfh</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$vBdii7Ps</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$vBdii7Ps$auxiliary$IQNqoClZ</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$vBdii7Ps$auxiliary$m4JCTgkK</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$WrXgybtf</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$WrXgybtf$auxiliary$Dd3Q1N93</td>
+  </tr>
+  <tr>
+    <td class="name">IProductService$MockitoMock$WrXgybtf$auxiliary$jDN260kV</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.application.port.input;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.domain.dto.ProductDTO;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.ProductSaveReq;
+&nbsp;import org.springframework.data.domain.Page;
+&nbsp;import org.springframework.data.domain.Pageable;
+&nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface IProductService {
+&nbsp;    ProductDTO findProductById(Long id);
+&nbsp;    ProductDTO saveProduct(ProductSaveReq req);
+&nbsp;    ProductDTO updateProduct(ProductSaveReq req, Long id);
+&nbsp;    void deleteProduct(Long id);
+&nbsp;    List&lt;ProductDTO&gt; ListAllProducts();
+&nbsp;    List&lt;ProductDTO&gt; OrderAllProductsByPrice();
+&nbsp;    Page&lt;ProductDTO&gt; findProductPage(Pageable pageable);
+&nbsp;    List&lt;ProductDTO&gt; findProductByName(String name);
+&nbsp;    List&lt;ProductDTO&gt; findProductByPrice(BigDecimal min, BigDecimal max);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:09</div>
+</div>
+</body>
+</html>

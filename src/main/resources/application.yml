@@ -5,3 +5,20 @@ spring:
     name: retocp
   jackson:
     property-naming-strategy: SNAKE_CASE
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+jwt:
+  secret: ${JWT-SECRET}

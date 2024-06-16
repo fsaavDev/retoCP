@@ -1,0 +1,179 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > AuthController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.adapters.web.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: AuthController (com.cineplanetfactory.retocp.adapters.web.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AuthController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.adapters.web.controller;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.adapters.config.security.JwtTokenUtil;
+&nbsp;import com.cineplanetfactory.retocp.adapters.config.security.userpackage.JwtUserDetailsService;
+&nbsp;import com.cineplanetfactory.retocp.adapters.config.security.userpackage.UserAuthData;
+&nbsp;import com.cineplanetfactory.retocp.adapters.config.security.userpackage.UserDTO;
+&nbsp;import com.cineplanetfactory.retocp.adapters.web.exception.UnauthorizedException;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.JwtRequest;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.security.authentication.AuthenticationManager;
+&nbsp;import org.springframework.security.authentication.BadCredentialsException;
+&nbsp;import org.springframework.security.authentication.DisabledException;
+&nbsp;import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+&nbsp;import org.springframework.security.core.userdetails.UserDetails;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import javax.validation.Valid;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@RestController
+<b class="nc">&nbsp;public class AuthController {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private AuthenticationManager authenticationManager;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private JwtTokenUtil jwtTokenUtil;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private JwtUserDetailsService userDetailsService;
+&nbsp;
+&nbsp;    @PostMapping(&quot;/login&quot;)
+&nbsp;    public ResponseEntity&lt;String&gt; login(@RequestBody JwtRequest req) throws Exception {
+<b class="nc">&nbsp;        authenticate(req.getUsername(), req.getPassword());</b>
+<b class="nc">&nbsp;        final UserDetails userDetails = userDetailsService.loadUserByUsername(req.getUsername());</b>
+<b class="nc">&nbsp;        final String token = jwtTokenUtil.generateToken(userDetails);</b>
+<b class="nc">&nbsp;        return new ResponseEntity&lt;&gt;(token, HttpStatus.OK);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;/users&quot;)
+&nbsp;    public ResponseEntity&lt;UserDTO&gt; create(@Valid @RequestBody UserAuthData user) throws Exception{
+<b class="nc">&nbsp;        UserDTO dto = userDetailsService.saveUser(user);</b>
+<b class="nc">&nbsp;        return new ResponseEntity&lt;&gt;(dto, HttpStatus.CREATED);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/users&quot;)
+&nbsp;    public ResponseEntity&lt;List&lt;UserAuthData&gt;&gt; getAll() throws Exception{
+<b class="nc">&nbsp;        List&lt;UserAuthData&gt; lst = userDetailsService.findAll();</b>
+<b class="nc">&nbsp;        return new ResponseEntity&lt;&gt;(lst, HttpStatus.OK);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @DeleteMapping(&quot;/users/{id}&quot;)
+&nbsp;    public ResponseEntity&lt;?&gt; delete(@PathVariable(&quot;id&quot;) Integer id) throws Exception{
+<b class="nc">&nbsp;        userDetailsService.deleteUser(id);</b>
+<b class="nc">&nbsp;        return ResponseEntity.ok(&quot;deleted&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;/users/{id}&quot;)
+&nbsp;    public ResponseEntity&lt;UserDTO&gt; readById(@PathVariable(&quot;id&quot;) Integer id) throws Exception{
+<b class="nc">&nbsp;        UserDTO obj = userDetailsService.findUserById(id);</b>
+<b class="nc">&nbsp;        return new ResponseEntity&lt;&gt;(obj, HttpStatus.OK);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private void authenticate(String username, String password) throws Exception {
+&nbsp;        try {
+<b class="nc">&nbsp;            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));</b>
+<b class="nc">&nbsp;        } catch (DisabledException e) {</b>
+<b class="nc">&nbsp;            throw new UnauthorizedException(&quot;USER_DISABLED&quot;, e);</b>
+<b class="nc">&nbsp;        } catch (BadCredentialsException e) {</b>
+<b class="nc">&nbsp;            throw new UnauthorizedException(&quot;INVALID_CREDENTIALS&quot;, e);</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:23</div>
+</div>
+</body>
+</html>

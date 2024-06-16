@@ -1,0 +1,209 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Order</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.domain.model</a>
+</div>
+
+<h1>Coverage Summary for Class: Order (com.cineplanetfactory.retocp.domain.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Order</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87.5%
+  </span>
+  <span class="absValue">
+    (7/8)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Order$Customer</td>
+<td class="coverageStat">
+  <span class="percent">
+    71.4%
+  </span>
+  <span class="absValue">
+    (5/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    71.4%
+  </span>
+  <span class="absValue">
+    (5/7)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (12/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (12/15)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.domain.model;
+&nbsp;
+&nbsp;import lombok.*;
+&nbsp;
+&nbsp;import javax.persistence.*;
+&nbsp;import javax.validation.constraints.Min;
+&nbsp;
+&nbsp;/**
+&nbsp; * @author fsaav
+&nbsp; * Tabla Pedidos para retoCP
+&nbsp; */
+&nbsp;@Getter
+<b class="fc">&nbsp;@Setter</b>
+<b class="nc">&nbsp;@AllArgsConstructor</b>
+<b class="fc">&nbsp;@NoArgsConstructor</b>
+<b class="fc">&nbsp;@ToString</b>
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;PEDIDOS&quot;)
+&nbsp;public class Order {
+&nbsp;    /**
+&nbsp;     * Identificador único del Pedido.
+&nbsp;     */
+&nbsp;    @Id
+&nbsp;    @Column(name = &quot;nro_pedido&quot;,nullable = false)
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<b class="fc">&nbsp;    private Long orderNumber;</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Relacion muchos a uno de Pedido con Producto.
+&nbsp;     * Un producto puede ser referenciado en multiples Pedidos a traves de la columna codigo_producto
+&nbsp;     */
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;codigo_producto&quot;,nullable = false, foreignKey = @ForeignKey(name = &quot;fk_pedido_producto&quot;))
+<b class="fc">&nbsp;    private Product product;</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Cantidad de Productos del Pedido.
+&nbsp;     */
+&nbsp;    @Column(name = &quot;cantidad&quot;, nullable = false)
+<b class="fc">&nbsp;    private Integer quantity;</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Objeto Cliente del Pedido.
+&nbsp;     * Se le hace Override a los atributos para darles un nombre de columnba personalizado
+&nbsp;     */
+&nbsp;    @Embedded
+&nbsp;    @AttributeOverrides(value = {
+&nbsp;            @AttributeOverride(name = &quot;names&quot;, column = @Column(name = &quot;cliente_nombres&quot;, nullable = false)),
+&nbsp;            @AttributeOverride(name = &quot;lastnames&quot;, column = @Column(name = &quot;cliente_apellidos&quot;, nullable = false)),
+&nbsp;            @AttributeOverride(name = &quot;address&quot;, column = @Column(name = &quot;cliente_direccion&quot;, nullable = false)),
+&nbsp;    })
+<b class="fc">&nbsp;    private Customer customer;</b>
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Clase Cliente de tipo Embeddable.
+&nbsp;     * Esta clase asignara las columnas complementarias de la clase Pedido
+&nbsp;     */
+&nbsp;    @Embeddable
+&nbsp;    @Getter
+<b class="nc">&nbsp;    @Setter</b>
+<b class="nc">&nbsp;    @NoArgsConstructor</b>
+<b class="fc">&nbsp;    @AllArgsConstructor</b>
+<b class="fc">&nbsp;    @ToString</b>
+&nbsp;    public static class Customer {
+&nbsp;        /**
+&nbsp;         * Nombres del cliente del Pedido.
+&nbsp;         */
+<b class="fc">&nbsp;        private String names;</b>
+&nbsp;        /**
+&nbsp;         * Apellidos del cliente del Pedido.
+&nbsp;         */
+<b class="fc">&nbsp;        private String lastnames;</b>
+&nbsp;        /**
+&nbsp;         * Direccion del cliente del Pedido.
+&nbsp;         */
+<b class="fc">&nbsp;        private String address;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:23</div>
+</div>
+</body>
+</html>

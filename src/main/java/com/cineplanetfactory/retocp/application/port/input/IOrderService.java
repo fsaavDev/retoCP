@@ -12,8 +12,9 @@ public interface IOrderService {
     OrderDTO saveOrder(OrderSaveReq req);
     OrderDTO updateOrder(OrderSaveReq req, Long id);
     void deleteOrder(Long id);
-    List<OrderDTO> ListAllOrders();
+    List<OrderDTO> listAllOrders();
+    List<OrderDTO> sortAllOrdersByQuantity();
     Page<OrderDTO> findOrderPage(Pageable pageable);
-    OrderDTO getOrderByProductName(String name);
-    OrderDTO getOrderByCustomerLastname(String lastname);
+    List<OrderDTO> getOrderByProductName(String name);
+    List<OrderDTO> getOrderByCustomerLastname(String lastname);
 }

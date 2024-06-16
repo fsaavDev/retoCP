@@ -37,6 +37,13 @@ public class Handler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<RetoCpApiResponse<String>> handleUnauthorizedException(UnauthorizedException e, WebRequest req){
+        log.error("Ocurrio un error de autorizacion: {}",e.getMessage());
+        RetoCpApiResponse<String> res = new RetoCpApiResponse<>(e.getMessage());
+        return new ResponseEntity<>(res, HttpStatus.UNAUTHORIZED);
+    }
+
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<RetoCpApiResponse<List<String>>> handleSQLExceptions(DataIntegrityViolationException e, WebRequest req){
         log.error("Ocurrio un error de tipo SQL: {}",e.getMessage());

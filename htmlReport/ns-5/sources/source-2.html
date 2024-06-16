@@ -1,0 +1,248 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > ProductServiceImpl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.application.service</a>
+</div>
+
+<h1>Coverage Summary for Class: ProductServiceImpl (com.cineplanetfactory.retocp.application.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductServiceImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (42/42)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.application.service;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.adapters.repository.IProductRepository;
+&nbsp;import com.cineplanetfactory.retocp.adapters.util.IMapper;
+&nbsp;import com.cineplanetfactory.retocp.adapters.web.exception.ModelNotFoundException;
+&nbsp;import com.cineplanetfactory.retocp.application.port.input.IProductService;
+&nbsp;import com.cineplanetfactory.retocp.domain.dto.ProductDTO;
+&nbsp;import com.cineplanetfactory.retocp.domain.model.Product;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.ProductSaveReq;
+&nbsp;import lombok.extern.slf4j.Slf4j;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.data.domain.Page;
+&nbsp;import org.springframework.data.domain.Pageable;
+&nbsp;import org.springframework.data.domain.Sort;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.math.BigDecimal;
+&nbsp;import java.util.List;
+&nbsp;import java.util.stream.Collectors;
+&nbsp;
+&nbsp;@Service
+<b class="fc">&nbsp;@Slf4j</b>
+<b class="fc">&nbsp;public class ProductServiceImpl implements IProductService {</b>
+&nbsp;    @Autowired // Dependency injection by annotation
+&nbsp;    private IProductRepository productRepository;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private IMapper mapper;
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param id identificador del Producto
+&nbsp;     * @return DTO de Producto
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public ProductDTO findProductById(Long id) {
+<b class="fc">&nbsp;        log.info(&quot;Buscando producto con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;        Product entity = productRepository.findById(id)</b>
+<b class="fc">&nbsp;                .orElseThrow(()-&gt; {</b>
+<b class="fc">&nbsp;                    log.warn(&quot;Producto no encontrado con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;                    return new ModelNotFoundException(&quot;Producto no encontrado&quot;);</b>
+&nbsp;                });
+<b class="fc">&nbsp;        return mapper.toDTO(entity);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param req request para crear producto
+&nbsp;     * @return DTO de Producto
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public ProductDTO saveProduct(ProductSaveReq req) {
+<b class="fc">&nbsp;        log.info(&quot;Guardando producto con informacion del request: {}&quot;, req);</b>
+<b class="fc">&nbsp;        Product entity = productRepository.save(mapper.toEntity(req));</b>
+<b class="fc">&nbsp;        log.info(&quot;Producto guardado exitosamente: {}&quot;, entity);</b>
+<b class="fc">&nbsp;        return mapper.toDTO(entity);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param req request para actualizar producto
+&nbsp;     * @param id identificador de producto a actualizar
+&nbsp;     * @return DTO de Producto
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public ProductDTO updateProduct(ProductSaveReq req, Long id) {
+<b class="fc">&nbsp;        log.info(&quot;Buscando producto con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;        Product entity = productRepository.findById(id)</b>
+<b class="fc">&nbsp;                .orElseThrow(()-&gt; {</b>
+<b class="fc">&nbsp;                    log.warn(&quot;Producto no encontrado con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;                    return new ModelNotFoundException(&quot;Producto no encontrado&quot;);</b>
+&nbsp;                });
+<b class="fc">&nbsp;        entity.setName(req.getName());</b>
+<b class="fc">&nbsp;        entity.setPrice(req.getPrice());</b>
+<b class="fc">&nbsp;        entity = productRepository.save(entity);</b>
+<b class="fc">&nbsp;        log.info(&quot;Producto guardado exitosamente: {}&quot;, entity);</b>
+<b class="fc">&nbsp;        return mapper.toDTO(entity);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param id identificador de producto a eliminar
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public void deleteProduct(Long id) {
+<b class="fc">&nbsp;        if(!productRepository.existsById(id)){</b>
+<b class="fc">&nbsp;            log.warn(&quot;Producto no encontrado con el ID: {}&quot;, id);</b>
+<b class="fc">&nbsp;            throw new ModelNotFoundException(&quot;Producto no encontrado&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        productRepository.deleteById(id);</b>
+<b class="fc">&nbsp;        log.info(&quot;Producto eliminado exitosamente&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @return Listado de todos los Productos sin paginacion
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;ProductDTO&gt; ListAllProducts() {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los productos&quot;);</b>
+<b class="fc">&nbsp;        return productRepository.findAll().stream()</b>
+<b class="fc">&nbsp;                .map(p-&gt;mapper.toDTO(p)).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @return Listado de todos los Productos ordenados por precio
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;ProductDTO&gt; OrderAllProductsByPrice() {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los productos ordenados por precio&quot;);</b>
+<b class="fc">&nbsp;        return productRepository.findAll(Sort.by(&quot;price&quot;)).stream()</b>
+<b class="fc">&nbsp;                .map(p-&gt;mapper.toDTO(p)).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param pageable numero y tamaño de pagina a mostrar
+&nbsp;     * @return Pagina de productos
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public Page&lt;ProductDTO&gt; findProductPage(Pageable pageable) {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los productos en formato de paginacion&quot;);</b>
+<b class="fc">&nbsp;        Page&lt;Product&gt; products = productRepository.findAll(pageable);</b>
+<b class="fc">&nbsp;        return products.map(p-&gt;mapper.toDTO(p));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param name nombre del producto
+&nbsp;     * @return listado de productos que contengan el valor de name en su nombre
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;ProductDTO&gt; findProductByName(String name) {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los productos por nombre de producto: {}&quot;,name);</b>
+<b class="fc">&nbsp;        return productRepository.findByNameContains(name).stream()</b>
+<b class="fc">&nbsp;                .map(p-&gt;mapper.toDTO(p)).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @param min precio minimo
+&nbsp;     * @param max precio maximo
+&nbsp;     * @return listado de productos con precio entre min y max
+&nbsp;     */
+&nbsp;    @Override
+&nbsp;    public List&lt;ProductDTO&gt; findProductByPrice(BigDecimal min, BigDecimal max) {
+<b class="fc">&nbsp;        log.info(&quot;Listando todos los productos por precio entre: {} - {}&quot;, min, max);</b>
+<b class="fc">&nbsp;        return productRepository.findByPriceBetween(min,max).stream()</b>
+<b class="fc">&nbsp;                .map(p-&gt;mapper.toDTO(p)).collect(Collectors.toList());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:23</div>
+</div>
+</body>
+</html>

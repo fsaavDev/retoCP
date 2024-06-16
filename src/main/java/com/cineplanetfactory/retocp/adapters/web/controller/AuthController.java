@@ -20,6 +20,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired

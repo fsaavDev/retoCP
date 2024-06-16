@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > IMapper</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.cineplanetfactory.retocp.adapters.util</a>
+</div>
+
+<h1>Coverage Summary for Class: IMapper (com.cineplanetfactory.retocp.adapters.util)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">IMapper$MockitoMock$XiaQB7cD</td>
+  </tr>
+  <tr>
+    <td class="name">IMapper$MockitoMock$XiaQB7cD$auxiliary$1l0fvXDb</td>
+  </tr>
+  <tr>
+    <td class="name">IMapper$MockitoMock$XiaQB7cD$auxiliary$L9oFzZDu</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.cineplanetfactory.retocp.adapters.util;
+&nbsp;
+&nbsp;import com.cineplanetfactory.retocp.domain.dto.OrderDTO;
+&nbsp;import com.cineplanetfactory.retocp.domain.dto.ProductDTO;
+&nbsp;import com.cineplanetfactory.retocp.domain.model.Order;
+&nbsp;import com.cineplanetfactory.retocp.domain.model.Product;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.OrderSaveReq;
+&nbsp;import com.cineplanetfactory.retocp.domain.request.ProductSaveReq;
+&nbsp;
+&nbsp;public interface IMapper {
+&nbsp;    ProductDTO toDTO(Product e);
+&nbsp;    Product toEntity(ProductSaveReq req);
+&nbsp;
+&nbsp;    OrderDTO toDTO(Order e);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-06-16 13:23</div>
+</div>
+</body>
+</html>

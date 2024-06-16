@@ -79,7 +79,7 @@ class ProductControllerTest {
 
         mockMvc.perform(post("/productos")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"nombre\":\"Test Product\",\"precio\":10.0}")
+                        .content("{\"nombre\":\"Test Product\",\"precio\":10.0}") // FORMA 1 JSON PURO
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))

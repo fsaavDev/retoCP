@@ -71,7 +71,7 @@ public class WebSecurityConfig {
                 .antMatchers(HttpMethod.DELETE, "/pedidos/**").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .exceptionHandling().authenticationEntryPoint(authHandler)
+                .exceptionHandling().authenticationEntryPoint(authHandler).accessDeniedHandler(authHandler)
                 .and()
                 .formLogin().disable()
                 .sessionManagement()

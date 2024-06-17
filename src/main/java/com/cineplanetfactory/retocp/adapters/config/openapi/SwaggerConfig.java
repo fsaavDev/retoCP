@@ -15,7 +15,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("RetoCP: API de Productos y Pedidos")
-                        .version("1.0.0")
+                        .version("1.1.0")
                         .description("Documentación del API RetoCP para gestión de productos y pedidos"))
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new io.swagger.v3.oas.models.Components()

@@ -57,9 +57,3 @@ Las operaciones apuntan principalmente a estos dos endpoints
 Se podra revisar la especificacion de dichos endpoints en la siguiente URL de documentacion [Swagger OpenApi 3.0](https://retocp2024-nqug.onrender.com/swagger-ui/index.html)
 
 Adicionalmente se adjunta el [POSTMAN DEL PROYECTO](retoCP-2024.postman_collection.json)‍🚀📜
-
-
-
-
-
-

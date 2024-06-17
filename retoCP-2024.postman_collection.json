@@ -1,0 +1,6289 @@
+{
+	"info": {
+		"_postman_id": "48a81e68-ea8b-4dc9-9de0-930939be6b39",
+		"name": "retoCP-2024",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12074768"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "AUTH REQUIRED",
+					"item": [
+						{
+							"name": "Crear",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"{{$randomProduct}}\",\r\n    \"precio\": {{$randomPrice}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NO TOKEN",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\":\"{{$randomProduct}}\",\r\n    \"precio\": {{$randomPrice}}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 00:22:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "50"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894ee20edf555000-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "973eb58b-e573-4679"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Token not found\"\n}"
+								},
+								{
+									"name": "OPERARIO",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\":\"{{$randomProduct}}\",\r\n    \"precio\": {{$randomPrice}}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:00:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f1a0a1c61b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "a26eb63e-9d27-4c64"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User not allowed for this operation\"\n}"
+								},
+								{
+									"name": "ADMIN - VENDEDOR",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\":\"{{$randomProduct}}\",\r\n    \"precio\": {{$randomPrice}}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:01:21 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f1b8f5b3eb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "975cd009-6beb-442f"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"codigo\": 1,\n        \"nombre\": \"Towels\",\n        \"precio\": 513.59\n    }\n}"
+								},
+								{
+									"name": "VALIDATION",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\":\"{{$randomProduct}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:14:48 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f2f4feb86b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "a2dc92e7-4d66-4be2"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"price\": \"El precio no puede ser nulo\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Towelz\",\r\n    \"precio\": 70.70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NO TOKEN",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Towelz\",\r\n    \"precio\": 70.70\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"1"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:14:09 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "50"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f2e603ac5b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "1fde708b-e5e0-4820"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Token not found\"\n}"
+								},
+								{
+									"name": "VENDEDOR - OPERARIO",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Towelz\",\r\n    \"precio\": 70.70\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"1"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:16:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f316b4935b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "5749c427-3830-48d0"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User not allowed for this operation\"\n}"
+								},
+								{
+									"name": "ADMIN",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Towelz\",\r\n    \"precio\": 70.70\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:16:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f328648dab53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "15552191-cf4f-4998"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"codigo\": 1,\n        \"nombre\": \"Towelz\",\n        \"precio\": 70.7\n    }\n}"
+								},
+								{
+									"name": "VALIDATION",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nombre\": \"Towelz\",\r\n    \"precio\": 0.0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"1"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:18:11 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f344a991ab53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "730f0256-659e-40c7"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"price\": \"El precio debe ser mayor o igual que 0.10 centimos\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Eliminar por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/9",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"9"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NO TOKEN",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/10",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"10"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:19:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "50"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f358e7fdbb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "25420a39-0187-41c1"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Token not found\"\n}"
+								},
+								{
+									"name": "VENDEDOR - OPERARIO",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/10",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"10"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:19:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f36b4ffafb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "8a3b9b29-a220-48f1"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User not allowed for this operation\"\n}"
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/9",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"9"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:20:57 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f384feddeb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "195b2593-0573-4521"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Producto eliminado\"\n}"
+								},
+								{
+									"name": "NOT FOUND",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/100",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"100"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:20:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f37c4f8abb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "5722f3e6-3e24-45e1"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Producto no encontrado\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "NO AUTH REQUIRED",
+					"item": [
+						{
+							"name": "Encontrar por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:03:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f1e48aa94b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "98424477-6a6c-41e1"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"codigo\": 1,\n        \"nombre\": \"Towels\",\n        \"precio\": 513.59\n    }\n}"
+								},
+								{
+									"name": "NOT FOUND",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/100",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"100"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:03:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f1ebcda77b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "d4f9b474-85b6-4ee5"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Producto no encontrado\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Paginacion",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/pagination?page=0&size=5",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"pagination"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/pagination?page=2&size=3",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"pagination"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "2"
+												},
+												{
+													"key": "size",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:05:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f211f6e3cb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "08356f03-1e75-4092"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"content\": [\n        {\n            \"codigo\": 7,\n            \"nombre\": \"Shoes\",\n            \"precio\": 943.63\n        },\n        {\n            \"codigo\": 8,\n            \"nombre\": \"Cheese\",\n            \"precio\": 303.97\n        },\n        {\n            \"codigo\": 9,\n            \"nombre\": \"Chicken\",\n            \"precio\": 773.83\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": false,\n            \"sorted\": true,\n            \"empty\": false\n        },\n        \"page_number\": 2,\n        \"page_size\": 3,\n        \"offset\": 6,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"total_pages\": 4,\n    \"total_elements\": 11,\n    \"sort\": {\n        \"unsorted\": false,\n        \"sorted\": true,\n        \"empty\": false\n    },\n    \"number\": 2,\n    \"first\": false,\n    \"number_of_elements\": 3,\n    \"size\": 3,\n    \"empty\": false\n}"
+								},
+								{
+									"name": "DEFAULT",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/pagination",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"pagination"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0",
+													"disabled": true
+												},
+												{
+													"key": "size",
+													"value": "5",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:07:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f247afdf4b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "597a1c29-b255-4b9f"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"content\": [\n        {\n            \"codigo\": 1,\n            \"nombre\": \"Towels\",\n            \"precio\": 513.59\n        },\n        {\n            \"codigo\": 2,\n            \"nombre\": \"Cheese\",\n            \"precio\": 646.48\n        },\n        {\n            \"codigo\": 3,\n            \"nombre\": \"Keyboard\",\n            \"precio\": 403.29\n        },\n        {\n            \"codigo\": 4,\n            \"nombre\": \"Tuna\",\n            \"precio\": 647.67\n        },\n        {\n            \"codigo\": 5,\n            \"nombre\": \"Sausages\",\n            \"precio\": 396.05\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": false,\n            \"sorted\": true,\n            \"empty\": false\n        },\n        \"page_number\": 0,\n        \"page_size\": 5,\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"total_pages\": 3,\n    \"total_elements\": 11,\n    \"sort\": {\n        \"unsorted\": false,\n        \"sorted\": true,\n        \"empty\": false\n    },\n    \"number\": 0,\n    \"first\": true,\n    \"number_of_elements\": 5,\n    \"size\": 5,\n    \"empty\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos (sin orden)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:04:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f1fa69c00b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "a1af1fb2-4197-4a50"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"codigo\": 1,\n            \"nombre\": \"Towels\",\n            \"precio\": 513.59\n        },\n        {\n            \"codigo\": 2,\n            \"nombre\": \"Cheese\",\n            \"precio\": 646.48\n        },\n        {\n            \"codigo\": 3,\n            \"nombre\": \"Keyboard\",\n            \"precio\": 403.29\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos por Nombre",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/name/Cheese",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"name",
+										"Cheese"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/name/Cheese",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"name",
+												"Cheese"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:08:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f25f098cdb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "07832e81-593b-4be0"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"codigo\": 2,\n            \"nombre\": \"Cheese\",\n            \"precio\": 646.48\n        },\n        {\n            \"codigo\": 8,\n            \"nombre\": \"Cheese\",\n            \"precio\": 303.97\n        },\n        {\n            \"codigo\": 11,\n            \"nombre\": \"Cheese\",\n            \"precio\": 54.9\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos por Precio entre min y max",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/price?min=300&max=400",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"price"
+									],
+									"query": [
+										{
+											"key": "min",
+											"value": "300"
+										},
+										{
+											"key": "max",
+											"value": "400"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/price?min=300&max=400",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"price"
+											],
+											"query": [
+												{
+													"key": "min",
+													"value": "300"
+												},
+												{
+													"key": "max",
+													"value": "400"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:10:21 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f28cd2f5eb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "8b00c80d-5d4c-44a2"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"codigo\": 5,\n            \"nombre\": \"Sausages\",\n            \"precio\": 396.05\n        },\n        {\n            \"codigo\": 8,\n            \"nombre\": \"Cheese\",\n            \"precio\": 303.97\n        },\n        {\n            \"codigo\": 10,\n            \"nombre\": \"Hat\",\n            \"precio\": 348.52\n        }\n    ]\n}"
+								},
+								{
+									"name": "PARAMETER NULL",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/price?max=400",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"price"
+											],
+											"query": [
+												{
+													"key": "min",
+													"value": "300",
+													"disabled": true
+												},
+												{
+													"key": "max",
+													"value": "400"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:11:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f2ab19dfdb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "299bbe1f-ed10-4dab"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Required request parameter 'min' for method parameter type BigDecimal is not present\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos (ordenados asc por precio)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/productos/order/price",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"productos",
+										"order",
+										"price"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/productos/order/price",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"productos",
+												"order",
+												"price"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:12:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f2c821926b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "2c815873-583b-4b82"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"codigo\": 11,\n            \"nombre\": \"Cheese\",\n            \"precio\": 54.9\n        },\n        {\n            \"codigo\": 8,\n            \"nombre\": \"Cheese\",\n            \"precio\": 303.97\n        },\n        {\n            \"codigo\": 10,\n            \"nombre\": \"Hat\",\n            \"precio\": 348.52\n        },\n        {\n            \"codigo\": 5,\n            \"nombre\": \"Sausages\",\n            \"precio\": 396.05\n        },\n        {\n            \"codigo\": 3,\n            \"nombre\": \"Keyboard\",\n            \"precio\": 403.29\n        },\n        {\n            \"codigo\": 1,\n            \"nombre\": \"Towels\",\n            \"precio\": 513.59\n        },\n        {\n            \"codigo\": 6,\n            \"nombre\": \"Mouse\",\n            \"precio\": 540.99\n        },\n        {\n            \"codigo\": 2,\n            \"nombre\": \"Cheese\",\n            \"precio\": 646.48\n        },\n        {\n            \"codigo\": 4,\n            \"nombre\": \"Tuna\",\n            \"precio\": 647.67\n        },\n        {\n            \"codigo\": 9,\n            \"nombre\": \"Chicken\",\n            \"precio\": 773.83\n        },\n        {\n            \"codigo\": 7,\n            \"nombre\": \"Shoes\",\n            \"precio\": 943.63\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "AUTH REQUIRED",
+					"item": [
+						{
+							"name": "Crear",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": {{$randomInt}},\r\n    \"cliente_nombres\": \"{{$randomFirstName}}\",\r\n    \"cliente_apellidos\": \"{{$randomLastName}}\",\r\n    \"cliente_direccion\": \"{{$randomStreetAddress}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NO TOKEN",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": {{$randomInt}},\r\n    \"cliente_nombres\": \"{{$randomFirstName}}\",\r\n    \"cliente_apellidos\": \"{{$randomLastName}}\",\r\n    \"cliente_direccion\": \"{{$randomStreetAddress}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:27:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "50"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f415b4d09b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "e7777f8a-9f0b-4ea7"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Token not found\"\n}"
+								},
+								{
+									"name": "OPERARIO",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": {{$randomInt}},\r\n    \"cliente_nombres\": \"{{$randomFirstName}}\",\r\n    \"cliente_apellidos\": \"{{$randomLastName}}\",\r\n    \"cliente_direccion\": \"{{$randomStreetAddress}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:27:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f42293da0b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "a704d62f-7b5d-44e8"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User not allowed for this operation\"\n}"
+								},
+								{
+									"name": "ADMIN - VENDEDOR",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": {{$randomInt}},\r\n    \"cliente_nombres\": \"{{$randomFirstName}}\",\r\n    \"cliente_apellidos\": \"{{$randomLastName}}\",\r\n    \"cliente_direccion\": \"{{$randomStreetAddress}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:28:15 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f42ff9ec3b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "6f1042b3-fba2-40fe"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"nro_pedido\": 1,\n        \"codigo_producto\": 3,\n        \"cantidad\": 299,\n        \"cliente\": {\n            \"nombres\": \"Rocky\",\n            \"apellidos\": \"Dickinson\",\n            \"direccion\": \"08904 Sarai Isle\"\n        }\n    }\n}"
+								},
+								{
+									"name": "VALIDATION",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 0,\r\n    \"cliente_nombres\": \"{{$randomFirstName}}\",\r\n    \"cliente_apellidos\": \"{{$randomLastName}}\",\r\n    \"cliente_direccion\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:29:07 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f444c6a3eb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "8aa607e5-a6a2-4def"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"address\": \"La dirección no puede estar vacía\",\n        \"quantity\": \"La cantidad debe ser al menos 1\"\n    }\n}"
+								},
+								{
+									"name": "PRODUCT NOT FOUND",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 100,\r\n    \"cantidad\": {{$randomInt}},\r\n    \"cliente_nombres\": \"{{$randomFirstName}}\",\r\n    \"cliente_apellidos\": \"{{$randomLastName}}\",\r\n    \"cliente_direccion\": \"{{$randomStreetAddress}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:29:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f45345904b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "3fb84a71-9a83-43c5"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Producto no encontrado\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 5,\r\n    \"cliente_nombres\": \"Rocky\",\r\n    \"cliente_apellidos\": \"Dickinson\",\r\n    \"cliente_direccion\": \"08904 Sarai Isle\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NO TOKEN",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 5,\r\n    \"cliente_nombres\": \"Rocky\",\r\n    \"cliente_apellidos\": \"Dickinson\",\r\n    \"cliente_direccion\": \"08904 Sarai Isle\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"1"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:38:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "50"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f5207bf43b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "4ac7758d-5fb5-4075"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Token not found\"\n}"
+								},
+								{
+									"name": "VENDEDOR - OPERARIO",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 5,\r\n    \"cliente_nombres\": \"Rocky\",\r\n    \"cliente_apellidos\": \"Dickinson\",\r\n    \"cliente_direccion\": \"08904 Sarai Isle\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"1"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:39:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f52d16fbdb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "3eb51570-5d83-4db5"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User not allowed for this operation\"\n}"
+								},
+								{
+									"name": "ADMIN",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 5,\r\n    \"cliente_nombres\": \"Rocky\",\r\n    \"cliente_apellidos\": \"Dickinson\",\r\n    \"cliente_direccion\": \"08904 Sarai Isle\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:39:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f53ea5f61b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "f7f3240a-e7c1-4b62"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"nro_pedido\": 1,\n        \"codigo_producto\": 3,\n        \"cantidad\": 5,\n        \"cliente\": {\n            \"nombres\": \"Rocky\",\n            \"apellidos\": \"Dickinson\",\n            \"direccion\": \"08904 Sarai Isle\"\n        }\n    }\n}"
+								},
+								{
+									"name": "VALIDATION",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 0,\r\n    \"cliente_nombres\": \"Rocky\",\r\n    \"cliente_apellidos\": \"Dickinson\",\r\n    \"cliente_direccion\": \" \"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"1"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:40:11 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f54843f14b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "5b43dfd5-8e5d-47a2"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"address\": \"La dirección no puede exceder los 255 caracteres y deben ser al menos 2 caracteres\",\n        \"quantity\": \"La cantidad debe ser al menos 1\"\n    }\n}"
+								},
+								{
+									"name": "NOT FOUND",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"codigo_producto\": 3,\r\n    \"cantidad\": 5,\r\n    \"cliente_nombres\": \"Rocky\",\r\n    \"cliente_apellidos\": \"Dickinson\",\r\n    \"cliente_direccion\": \"08904 Sarai Isle\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/100",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"100"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:40:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f54df8860b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "14ff906e-ed67-4ace"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Pedido no encontrado\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Eliminar por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/4",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "NO TOKEN",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/4",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"4"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:41:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "50"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f55be0bf2b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "481f598d-75ff-4783"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Token not found\"\n}"
+								},
+								{
+									"name": "VENDEDOR - OPERARIO",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/4",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"4"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:41:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=ISO-8859-1"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f566b88ceb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "f80321b3-b785-458c"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User not allowed for this operation\"\n}"
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/4",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"4"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:43:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f59f69c29b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "5f85eb0a-666d-4d7d"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Pedido eliminado\"\n}"
+								},
+								{
+									"name": "NOT FOUND",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/4",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"4"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:44:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f5a3facb3b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "bfab9fb7-da91-48c8"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Pedido no encontrado\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "NO AUTH REQUIRED",
+					"item": [
+						{
+							"name": "Encontrar por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/1",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:30:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f45eabcb5b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "7650c032-ea71-4ed2"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"nro_pedido\": 1,\n        \"codigo_producto\": 3,\n        \"cantidad\": 299,\n        \"cliente\": {\n            \"nombres\": \"Rocky\",\n            \"apellidos\": \"Dickinson\",\n            \"direccion\": \"08904 Sarai Isle\"\n        }\n    }\n}"
+								},
+								{
+									"name": "NOT FOUND",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/100",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"100"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:30:43 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f46a47c06b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "8752d230-a778-4abd"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"Pedido no encontrado\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Paginacion",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/pagination?page=1&size=3",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"pagination"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/pagination?page=1&size=3",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"pagination"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "size",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:31:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f482f6b80b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "a26136f9-74da-4f8f"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"content\": [\n        {\n            \"nro_pedido\": 4,\n            \"codigo_producto\": 1,\n            \"cantidad\": 529,\n            \"cliente\": {\n                \"nombres\": \"Andres\",\n                \"apellidos\": \"Wyman\",\n                \"direccion\": \"5962 Susanna Brooks\"\n            }\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": false,\n            \"sorted\": true,\n            \"empty\": false\n        },\n        \"page_number\": 1,\n        \"page_size\": 3,\n        \"offset\": 3,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"total_pages\": 2,\n    \"total_elements\": 4,\n    \"sort\": {\n        \"unsorted\": false,\n        \"sorted\": true,\n        \"empty\": false\n    },\n    \"number\": 1,\n    \"first\": false,\n    \"number_of_elements\": 1,\n    \"size\": 3,\n    \"empty\": false\n}"
+								},
+								{
+									"name": "DEFAULT",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/pagination",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"pagination"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "size",
+													"value": "3",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:32:09 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f48ba9f93b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "36742cff-3941-4400"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"content\": [\n        {\n            \"nro_pedido\": 1,\n            \"codigo_producto\": 3,\n            \"cantidad\": 299,\n            \"cliente\": {\n                \"nombres\": \"Rocky\",\n                \"apellidos\": \"Dickinson\",\n                \"direccion\": \"08904 Sarai Isle\"\n            }\n        },\n        {\n            \"nro_pedido\": 2,\n            \"codigo_producto\": 3,\n            \"cantidad\": 181,\n            \"cliente\": {\n                \"nombres\": \"Yazmin\",\n                \"apellidos\": \"Runte\",\n                \"direccion\": \"0300 Christophe Locks\"\n            }\n        },\n        {\n            \"nro_pedido\": 3,\n            \"codigo_producto\": 5,\n            \"cantidad\": 915,\n            \"cliente\": {\n                \"nombres\": \"Dayana\",\n                \"apellidos\": \"Hoeger\",\n                \"direccion\": \"8226 Pacocha Locks\"\n            }\n        },\n        {\n            \"nro_pedido\": 4,\n            \"codigo_producto\": 1,\n            \"cantidad\": 529,\n            \"cliente\": {\n                \"nombres\": \"Andres\",\n                \"apellidos\": \"Wyman\",\n                \"direccion\": \"5962 Susanna Brooks\"\n            }\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": false,\n            \"sorted\": true,\n            \"empty\": false\n        },\n        \"page_number\": 0,\n        \"page_size\": 5,\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"total_pages\": 1,\n    \"total_elements\": 4,\n    \"sort\": {\n        \"unsorted\": false,\n        \"sorted\": true,\n        \"empty\": false\n    },\n    \"number\": 0,\n    \"first\": true,\n    \"number_of_elements\": 4,\n    \"size\": 5,\n    \"empty\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos (sin orden)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:32:49 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f49b6aa68b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "2a08453b-1063-4a04"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"nro_pedido\": 1,\n            \"codigo_producto\": 3,\n            \"cantidad\": 299,\n            \"cliente\": {\n                \"nombres\": \"Rocky\",\n                \"apellidos\": \"Dickinson\",\n                \"direccion\": \"08904 Sarai Isle\"\n            }\n        },\n        {\n            \"nro_pedido\": 2,\n            \"codigo_producto\": 3,\n            \"cantidad\": 181,\n            \"cliente\": {\n                \"nombres\": \"Yazmin\",\n                \"apellidos\": \"Runte\",\n                \"direccion\": \"0300 Christophe Locks\"\n            }\n        },\n        {\n            \"nro_pedido\": 3,\n            \"codigo_producto\": 5,\n            \"cantidad\": 915,\n            \"cliente\": {\n                \"nombres\": \"Dayana\",\n                \"apellidos\": \"Hoeger\",\n                \"direccion\": \"8226 Pacocha Locks\"\n            }\n        },\n        {\n            \"nro_pedido\": 4,\n            \"codigo_producto\": 1,\n            \"cantidad\": 529,\n            \"cliente\": {\n                \"nombres\": \"Andres\",\n                \"apellidos\": \"Wyman\",\n                \"direccion\": \"5962 Susanna Brooks\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos por Nombre de Producto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/product-name/Keyboard",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"product-name",
+										"Keyboard"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/product-name/Keyboard",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"product-name",
+												"Keyboard"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:33:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f4b1f5d2ab53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "33c50057-b1e7-4b0a"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"nro_pedido\": 1,\n            \"codigo_producto\": 3,\n            \"cantidad\": 299,\n            \"cliente\": {\n                \"nombres\": \"Rocky\",\n                \"apellidos\": \"Dickinson\",\n                \"direccion\": \"08904 Sarai Isle\"\n            }\n        },\n        {\n            \"nro_pedido\": 2,\n            \"codigo_producto\": 3,\n            \"cantidad\": 181,\n            \"cliente\": {\n                \"nombres\": \"Yazmin\",\n                \"apellidos\": \"Runte\",\n                \"direccion\": \"0300 Christophe Locks\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos por Apellido de Cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/customer-lastname/Dickinson",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"customer-lastname",
+										"Dickinson"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/pedidos/customer-lastname/Fay",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"pedidos",
+												"customer-lastname",
+												"Fay"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jun 2024 03:24:52 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"nro_pedido\": 3,\n            \"codigo_producto\": 2,\n            \"cantidad\": 669,\n            \"cliente\": {\n                \"nombres\": \"Kelli\",\n                \"apellidos\": \"Fay\",\n                \"direccion\": \"1200 Mia Drive\"\n            }\n        }\n    ]\n}"
+								},
+								{
+									"name": "NO RESULT",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/pedidos/customer-lastname/Faysss",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"pedidos",
+												"customer-lastname",
+												"Faysss"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 16 Jun 2024 03:25:10 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": []\n}"
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/customer-lastname/Dickinson",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"customer-lastname",
+												"Dickinson"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:34:57 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f4cd5cc89b53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "01fe1d8e-bfb3-42f8"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"nro_pedido\": 1,\n            \"codigo_producto\": 3,\n            \"cantidad\": 299,\n            \"cliente\": {\n                \"nombres\": \"Rocky\",\n                \"apellidos\": \"Dickinson\",\n                \"direccion\": \"08904 Sarai Isle\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Listar Todos (ordenados asc por cantidad de productos)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/pedidos/order/quantity",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"pedidos",
+										"order",
+										"quantity"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://retocp2024-nqug.onrender.com/pedidos/order/quantity",
+											"protocol": "https",
+											"host": [
+												"retocp2024-nqug",
+												"onrender",
+												"com"
+											],
+											"path": [
+												"pedidos",
+												"order",
+												"quantity"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Jun 2024 01:35:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "894f4d35cfffb53e-LIM"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "rndr-id",
+											"value": "2c4ca769-0222-4023"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "DENY"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"nro_pedido\": 2,\n            \"codigo_producto\": 3,\n            \"cantidad\": 181,\n            \"cliente\": {\n                \"nombres\": \"Yazmin\",\n                \"apellidos\": \"Runte\",\n                \"direccion\": \"0300 Christophe Locks\"\n            }\n        },\n        {\n            \"nro_pedido\": 1,\n            \"codigo_producto\": 3,\n            \"cantidad\": 299,\n            \"cliente\": {\n                \"nombres\": \"Rocky\",\n                \"apellidos\": \"Dickinson\",\n                \"direccion\": \"08904 Sarai Isle\"\n            }\n        },\n        {\n            \"nro_pedido\": 4,\n            \"codigo_producto\": 1,\n            \"cantidad\": 529,\n            \"cliente\": {\n                \"nombres\": \"Andres\",\n                \"apellidos\": \"Wyman\",\n                \"direccion\": \"5962 Susanna Brooks\"\n            }\n        },\n        {\n            \"nro_pedido\": 3,\n            \"codigo_producto\": 5,\n            \"cantidad\": 915,\n            \"cliente\": {\n                \"nombres\": \"Dayana\",\n                \"apellidos\": \"Hoeger\",\n                \"direccion\": \"8226 Pacocha Locks\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "USER (LOGIN FOR TESTING)",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"operario\",\r\n    \"password\":\"pass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://retocp2024-nqug.onrender.com/login",
+							"protocol": "https",
+							"host": [
+								"retocp2024-nqug",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ADMIN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"pass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/login",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:23:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ee3e68ed75000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "c2cd01f7-c62d-40b2"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODAwLCJpYXQiOjE3MTg1ODM4MDB9.UXBkIdlmOybZV1bjGULeWN4rR43ksrDgHJIT56UVIHbK7h_z6ppKHl147dDEVVj0-BI0E9PGiQc5567NTuqYuw"
+						},
+						{
+							"name": "VENDEDOR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"vendedor\",\r\n    \"password\":\"pass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/login",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:24:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ee5a21d355000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "0a9e3ae4-b495-4a3f"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2ZW5kZWRvciIsInJvbGUiOiJWRU5ERURPUiIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODcwLCJpYXQiOjE3MTg1ODM4NzB9.MAXXoUQcDh7eqQs6AMT7iV5DKNi_zedWbTz4kwQtOw7yvNWetgKGm8M0hcDUlsbFgM3h5KCCkbL4w7OsWXYrdw"
+						},
+						{
+							"name": "OPERARIO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"operario\",\r\n    \"password\":\"pass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/login",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:24:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ee608bf1f5000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "f9d653b1-105c-4430"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvcGVyYXJpbyIsInJvbGUiOiJPUEVSQVJJTyIsInRlc3QiOiJ2YWx1ZSB0ZXN0IiwiZXhwIjoxNzE4NjAxODg2LCJpYXQiOjE3MTg1ODM4ODZ9.-0F8RXusU8gej4mw4wpCMWwniSgYZIcML2iUM-bBh-ibbji27Yl4ZmztPZjVEj_GxaaFi6lZ2H1xCp_qgDBnUQ"
+						}
+					]
+				},
+				{
+					"name": "GET USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://retocp2024-nqug.onrender.com/users/1",
+							"protocol": "https",
+							"host": [
+								"retocp2024-nqug",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET USER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/users/1",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:14:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ed776cd4a5000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "e9117b60-401c-493e"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_user\": 1,\n    \"username\": \"admin\",\n    \"role\": \"ADMIN\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CREATE USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"operario\",\r\n    \"password\":\"pass123\",\r\n    \"role\":\"OPERARIO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://retocp2024-nqug.onrender.com/users",
+							"protocol": "https",
+							"host": [
+								"retocp2024-nqug",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ADMIN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"pass123\",\r\n    \"role\":\"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/users",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:12:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ed42b19be5000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "d836d134-4652-419c"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_user\": 2,\n    \"username\": \"admin\",\n    \"role\": \"ADMIN\"\n}"
+						},
+						{
+							"name": "VENDEDOR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"vendedor\",\r\n    \"password\":\"pass123\",\r\n    \"role\":\"VENDEDOR\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/users",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:12:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ed353abed5000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "f9f62000-1db2-4ba5"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_user\": 1,\n    \"username\": \"vendedor\",\n    \"role\": \"VENDEDOR\"\n}"
+						},
+						{
+							"name": "OPERARIO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"operario\",\r\n    \"password\":\"pass123\",\r\n    \"role\":\"OPERARIO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/users",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:13:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894ed4ce69515000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "cdfa8ba7-2b6f-4858"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_user\": 3,\n    \"username\": \"operario\",\n    \"role\": \"OPERARIO\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET ALL USERS (EJEMPLO DE BCRYPT)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://retocp2024-nqug.onrender.com/users",
+							"protocol": "https",
+							"host": [
+								"retocp2024-nqug",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET ALL USERS (PASS: BCRYPT)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://retocp2024-nqug.onrender.com/users",
+									"protocol": "https",
+									"host": [
+										"retocp2024-nqug",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 00:17:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "894edb8debed5000-LIM"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "rndr-id",
+									"value": "a3be9e1c-b1c4-47fc"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_user\": 1,\n        \"username\": \"admin\",\n        \"password\": \"$2a$10$a1LJyff34yiAhln.3A97HuL123KoTT2paftMWpIe7Tx6PqhVqo2ZC\",\n        \"role\": \"ADMIN\"\n    },\n    {\n        \"id_user\": 2,\n        \"username\": \"vendedor\",\n        \"password\": \"$2a$10$SMuuAEcTFjzK81m4uOD80OAyekirCn2H8yhToEJY3.nBChEdw9PUW\",\n        \"role\": \"VENDEDOR\"\n    },\n    {\n        \"id_user\": 3,\n        \"username\": \"operario\",\n        \"password\": \"$2a$10$qWWTtRP0FZNoDDZyFd0et.JhRVMYAlHw2LwB5Bd95VxLTtfsbhqu6\",\n        \"role\": \"OPERARIO\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
